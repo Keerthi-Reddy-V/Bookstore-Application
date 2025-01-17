@@ -23,7 +23,7 @@
                     <a class="nav-link text-white" href="available_books">Available Books</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="#">My Books</a>
+                    <a class="nav-link text-white" href="my_books">My Books</a>
                 </li>
             </ul>
             <div>
@@ -34,21 +34,21 @@
 </nav>
 <nav class="container my-5 p-5" style="border:1px solid black">
     <h4 class="text-center">New Book Register</h4>
-<form class="col-md-4 offset-md-4">
-    <div class="mb-3">
-        <label for="name" class="form-label">Name</label>
-        <input type="text" class="form-control">
-    </div>
-    <div class="mb-3">
-        <label for="author" class="form-label">Author</label>
-        <input type="text" class="form-control">
-    </div>
-    <div class="mb-3">
-        <label for="price" class="form-label">Price</label>
-        <input type="text" class="form-control">
-    </div>
-    <center><button type="submit" class="btn btn-primary">Submit</button></center>
-</form>
+    <form class="col-md-4 offset-md-4" th:action="@{/save}" method="post">
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="mb-3">
+            <label for="author" class="form-label">Author</label>
+            <input type="text" class="form-control" id="author" name="author" required>
+        </div>
+        <div class="mb-3">
+            <label for="price" class="form-label">Price</label>
+            <input type="number" class="form-control" id="price" name="price" step="0.01" required>
+        </div>
+        <center><button type="submit" class="btn btn-primary">Submit</button></center>
+    </form>
 </nav>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

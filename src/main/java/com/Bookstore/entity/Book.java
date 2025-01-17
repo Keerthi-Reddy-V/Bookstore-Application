@@ -8,15 +8,15 @@ import jakarta.persistence.Id;
 @Entity
 public class Book {
     @Id
-    @GeneratedValue(
-            strategy = GenerationType.IDENTITY
-    )
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     private String name;
     private String author;
-    private String price;
+    private Double price;
 
-    public Book(int id, String name, String author, String price) {
+    public Book(int id, String name, String author, Double price) {
+        super();
         this.id = id;
         this.name = name;
         this.author = author;
@@ -24,6 +24,7 @@ public class Book {
     }
 
     public Book() {
+        super();
     }
 
     public int getId() {
@@ -38,7 +39,7 @@ public class Book {
         return this.author;
     }
 
-    public String getPrice() {
+    public Double getPrice() {
         return this.price;
     }
 
@@ -54,7 +55,7 @@ public class Book {
         this.author = author;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 }
